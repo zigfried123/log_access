@@ -1,2 +1,4 @@
 .idea
 vendor
+web/protected/runtime
+web/assets
