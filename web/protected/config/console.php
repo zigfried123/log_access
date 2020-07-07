@@ -12,6 +12,11 @@ return array(
 	// application components
 	'components'=>array(
 
+        'apache_access_logs'=>array(
+            'class'=>'application.components.ApacheLog',
+            'path' => 'D:\xampp3\apache\logs\access.log',
+        ),
+
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
 
