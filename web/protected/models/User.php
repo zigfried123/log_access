@@ -18,7 +18,18 @@ class User extends CActiveRecord
 		return 'user';
 	}
 
-	/**
+	public function behaviors()
+    {
+        return array(
+            'CTimestampBehavior' => array(
+                'class'=>'zii.behaviors.CTimestampBehavior',
+                'setUpdateOnCreate'=>false,
+                'createAttribute'=>'created_at'
+            ),
+        );
+    }
+
+    /**
 	 * @return array validation rules for model attributes.
 	 */
 	public function rules()
@@ -104,6 +115,6 @@ class User extends CActiveRecord
 
 	public function findByName($name)
     {
-        return User::model()->find('username=?',[$name]);
+        return self::model()->find('username=?',[$name]);
     }
 }
