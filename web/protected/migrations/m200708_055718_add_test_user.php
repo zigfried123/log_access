@@ -11,7 +11,7 @@ class m200708_055718_add_test_user extends CDbMigration
 
 	public function down()
 	{
-        $this->delete(self::TABLE, ['username'=>'admin']);
+        $this->delete(self::TABLE, "username='admin'");
 	}
 
 }
