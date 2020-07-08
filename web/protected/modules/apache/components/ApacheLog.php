@@ -1,8 +1,8 @@
 <?php
 
-use \application\components\ApacheParserAccessLog;
+use application\modules\apache\components\ApacheParserAccessLog;
 
-class ApacheLog extends CApplicationComponent
+class ApacheLog extends \CApplicationComponent
 {
     public $path;
     public $parser;
@@ -13,7 +13,7 @@ class ApacheLog extends CApplicationComponent
 
         $rawData = array_splice($rawData, $offset, $batch);
 
-        $parser = new ApacheParserAccessLog();
+        $parser = new ApacheParserAccessLog;
 
         $parsedData = $parser->parseData($rawData);
 

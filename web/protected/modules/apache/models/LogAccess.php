@@ -1,8 +1,13 @@
 <?php
 
-namespace application\models;
+namespace application\modules\apache\models;
 
 use CActiveRecord;
+use DateTime;
+use CActiveDataProvider;
+use CDbCriteria;
+use Yii;
+
 
 /**
  * This is the model class for table "log_access".
@@ -103,4 +108,52 @@ class LogAccess extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function getDataByIp(string $ip)
+    {
+        $criteria=new CDbCriteria();
+
+        $criteria->condition='ip=:ip';
+        $criteria->params=array(':ip'=>$ip);
+
+        return $criteria;
+
+    }
+
+    public function getDataByDate(string $date)
+    {
+        $date = (new DateTime($date))->getTimestamp();
+
+        $from = $date;
+        $to = $date + 86400;
+
+        $criteria=new CDbCriteria();
+
+        $criteria->condition='date BETWEEN :from AND :to';
+        $criteria->params=array(':from'=>$from, ':to'=>$to);
+
+        return $criteria;
+
+    }
+
+    public function getDataByPeriod(string $from, string $to)
+    {
+        $from = (new DateTime($from))->getTimestamp();
+        $to = (new DateTime($to))->getTimestamp();
+
+        $to += 86400;
+
+        $criteria=new CDbCriteria();
+
+        $criteria->condition='date BETWEEN :from AND :to';
+        $criteria->params=array(':from'=>$from, ':to'=>$to);
+
+        return $criteria;
+    }
+
+    public static function clearTable()
+    {
+        $q = Yii::app()->db->createCommand('TRUNCATE TABLE log_access');
+        $q->execute();
+    }
 }

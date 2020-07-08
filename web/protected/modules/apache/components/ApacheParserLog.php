@@ -1,6 +1,6 @@
 <?php
 
-namespace application\components;
+namespace application\modules\apache\components;
 
 abstract class ApacheParserLog
 {
