@@ -321,3 +321,49 @@ Stack trace:
 #10 D:\xampp3\htdocs\log_access\web\protected\yiic.php(7): require_once('D:\\xampp3\\htdoc...')
 #11 {main}
 ---
+2020/07/08 11:29:28 [error] [php] Undefined offset: 0 (D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\db\CDbCommand.php:1518)
+Stack trace:
+#0 D:\xampp3\htdocs\log_access\web\protected\migrations\m200708_055718_add_test_user.php(14): m200708_055718_add_test_user->delete()
+#1 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(440): m200708_055718_add_test_user->down()
+#2 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown()
+#3 unknown(0): MigrateCommand->actionDown()
+#4 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#5 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommandRunner.php(71): MigrateCommand->run()
+#6 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#7 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#8 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\yiic.php(33): CConsoleApplication->run()
+#9 D:\xampp3\htdocs\log_access\web\protected\yiic.php(7): require_once()
+#10 D:\xampp3\htdocs\log_access\web\protected\yiic(4): require_once()
+
+2020/07/08 11:30:06 [error] [php] Undefined offset: 0 (D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\db\CDbCommand.php:1518)
+Stack trace:
+#0 D:\xampp3\htdocs\log_access\web\protected\migrations\m200708_055718_add_test_user.php(14): m200708_055718_add_test_user->delete()
+#1 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(440): m200708_055718_add_test_user->down()
+#2 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown()
+#3 unknown(0): MigrateCommand->actionDown()
+#4 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#5 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommandRunner.php(71): MigrateCommand->run()
+#6 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#7 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#8 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\yiic.php(33): CConsoleApplication->run()
+#9 D:\xampp3\htdocs\log_access\web\protected\yiic.php(7): require_once()
+#10 D:\xampp3\htdocs\log_access\web\protected\yiic(4): require_once()
+
+2020/07/08 11:33:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin' in 'where clause'. The SQL statement executed was: DELETE FROM `user` WHERE username=admin.
+2020/07/08 11:33:14 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin' in 'where clause'. The SQL statement executed was: DELETE FROM `user` WHERE username=admin in D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\db\CDbCommand.php(1330): CDbCommand->execute(Array)
+#1 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\db\CDbMigration.php(227): CDbCommand->delete('user', 'username=admin', Array)
+#2 D:\xampp3\htdocs\log_access\web\protected\migrations\m200708_055718_add_test_user.php(14): CDbMigration->delete('user', 'username=admin')
+#3 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(440): m200708_055718_add_test_user->down()
+#4 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\cli\commands\MigrateCommand.php(145): MigrateCommand->migrateDown('m200708_055718_...')
+#5 [internal function]: MigrateCommand->actionDown(Array)
+#6 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#8 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#10 D:\xampp3\htdocs\log_access\vendor\yiisoft\yii\framework\yiic.php(33): CApplication->run()
+#11 D:\xampp3\htdocs\log_access\web\protected\yiic.php(7): require_once('D:\\xampp3\\htdoc...')
+#12 D:\xampp3\htdocs\log_access\web\protected\yiic(4): require_once('D:\\xampp3\\htdoc...')
+#13 {main}
+---
